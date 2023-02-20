@@ -2,3 +2,6 @@ homework
 day1_3
 change #3
 weather: 11C and couldy
+humidity: 88%
+visibility: 10km
+
