@@ -1,0 +1,6 @@
+"0","```r
+sum(select(all_deaths, gender))
+
+all_deaths %>% 
+  summarise(male_sum = sum(gender))
+```"

@@ -1,0 +1,16 @@
+"0","```r
+sum(select(all_deaths, gender))
+```"
+"1","[1] 760
+"
+"0","```r
+all_deaths %>% 
+  select(gender) %>% 
+  summarise(character_count = sum(gender)) %>% 
+  pull(character_count)
+```"
+"1","[1] 760
+"
+"0","```r
+  
+```"

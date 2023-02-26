@@ -1,0 +1,5 @@
+"0","```r
+the_name_of_my_variable <- c(3, 4, 5)
+
+the_name_of_my_variable == 4
+```"

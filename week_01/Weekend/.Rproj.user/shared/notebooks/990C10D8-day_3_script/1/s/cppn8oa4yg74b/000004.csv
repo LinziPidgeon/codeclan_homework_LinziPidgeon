@@ -1,0 +1,8 @@
+"0","```r
+
+
+all_deaths %>% 
+  select(name, allegiances) %>% 
+group_by(allegiances) %>% 
+  summarise(allegiances_count = n())
+```"

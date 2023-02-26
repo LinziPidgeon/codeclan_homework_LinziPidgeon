@@ -1,0 +1,5 @@
+"0",""
+"0"," books_data %>% "
+"0","  mutate(rounded_rating = round(average_rating, 1),"
+"0","         .after = average_rating) %>% "
+"0","  arrange(desc(rounded_rating))"

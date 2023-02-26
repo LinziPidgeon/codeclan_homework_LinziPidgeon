@@ -1,0 +1,5 @@
+"0","```r
+ggplot(recovery_times) +
+  aes(x = treatment_group, y = recovery, fill = prognosis) +
+  geom_col(position = \"dodge\") 
+```"

@@ -1,0 +1,5 @@
+"0","```r
+the_name_of_my_variable <- c(3, 4, 5)
+
+dplyr::filter(the_name_of_my_variable, variable == 4)
+```"

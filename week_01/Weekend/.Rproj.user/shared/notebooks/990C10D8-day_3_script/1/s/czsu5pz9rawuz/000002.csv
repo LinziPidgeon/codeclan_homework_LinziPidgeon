@@ -1,0 +1,5 @@
+"0","```r
+all_deaths %>% 
+  mutate (male_sum = sum(gender, na.rm = TRUE),
+          .after = gender)
+```"

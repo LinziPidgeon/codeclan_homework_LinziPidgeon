@@ -1,0 +1,27 @@
+"0","```r
+nrow(all_deaths) #number of rows in all_deaths data
+```"
+"1","[1] 917
+"
+"0","```r
+ncol(all_deaths) #number of columns in all_deaths data 
+```"
+"1","[1] 13
+"
+"0","```r
+dim(all_deaths)  #dimensions of all_deaths data
+```"
+"1","[1] 917  13
+"
+"0","```r
+names(all_deaths) #column names
+```"
+"1"," [1] \"name\"               \"allegiances\"        \"year_of_death\"     
+ [4] \"book_of_death\"      \"death_chapter\"      \"book_intro_chapter\"
+ [7] \"gender\"             \"nobility\"           \"book1_GoT\"         
+[10] \"book2_CoK\"          \"book3_SoS\"          \"book4_FfC\"         
+[13] \"book5_DwD\"         
+"
+"0","```r
+all_deaths
+```"

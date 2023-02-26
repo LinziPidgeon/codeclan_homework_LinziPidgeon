@@ -1,0 +1,189 @@
+Lab1 
+
+Comparison
+- late_deliveries
+- recovery_times
+- fitness_levels
+
+```{r}
+# late deliveries
+late_deliveries <- read_csv("data/late_deliveries.csv")
+```
+
+```{r}
+
+late_deliveries_plot <- ggplot(data = late_deliveries, aes(x = date, y = late_deliveries)) +
+  geom_line() + 
+  geom_point() +
+  geom_line(colour = "blue") + 
+  geom_point(colour = "purple") +
+  labs( 
+    x = "Date",
+    y = "Late deliveries total",
+    title = "Late deliveries, by year") + 
+  ylim(0, 175)
+
+
+late_deliveries_plot
+
+
+```
+
+```{r}
+recovery_times <- read_csv("data/recovery_times.csv")
+```
+
+
+```{r}
+recovery_times_plot <- ggplot(recovery_times) + 
+  aes(x=factor(prognosis, level=c('Excellent', 'Good', 'Average', 'Poor')), y = recovery , fill = treatment_group) + 
+   geom_line() + 
+  geom_col(position = "dodge") + 
+  labs(
+    x = "Prognosis",
+    y = "Recovery time (days)",
+    fill = "Treatment group",
+    title = "Recovery times by prognosis and treatment group")
+recovery_times_plot
+
+```
+
+
+
+
+```{r}
+fitness_levels <- read_csv("data/fitness_levels.csv")
+```
+
+
+```{r}
+average_fitness_score <- mean(fitness_levels/fitness_score)
+fitness_levels_plot <- ggplot(data = fitness_levels, aes(x = child, y = fitness_score, group = age, colour = age)) + 
+    geom_line() + 
+labs( 
+    x = "Child",
+    y = "Fitness score",
+    group = "Age",
+    title = "Fitness score, by age") + 
+   
+
+fitness_levels_plot
+
+```
+Connection
+- blood pressure
+- car use
+
+
+```{r}
+blood_pressure <- read_csv("data/blood_pressure.csv")
+```
+
+```{r}
+blood_pressure_plot <- ggplot(blood_pressure, aes(x = systolic_blood_pressure_mm_hg, y = daily_saturated_fat_intake_mg, colour = -daily_saturated_fat_intake_mg)) + 
+  geom_point() + 
+  geom_point(size=2) + 
+    labs( 
+    x = "Systolic blood pressure (mmHg)",
+    y = "Daily saturated fat intake (mg)",
+    colour = "Daily saturated fat intake (mg)",
+    title = "Blood pressure plotted against daily saturated fat intake") + 
+  ylim(0, 35)
+
+blood_pressure_plot
+```
+```{r}
+car_use <- read_csv("data/car_use.csv")
+```
+
+
+Bubble plot
+```{r}
+car_use_plot <- ggplot(car_use, aes(x = population, y = car_use_percent)) + 
+  geom_point(aes(size=air_so2_concentration_ppm), colour ="dark red") + 
+    labs( 
+    x = "Population",
+    y = "Car use (%)",
+    size = "Air SO2 concentration (ppm)", 
+    title = "Air SO2 concentration plotted against population and car use % for 32 cities")
+
+car_use_plot
+
+
+```
+Distribution
+ - d20_outcomes
+ - d20x5_outcomes
+ 
+```{r}
+d20_outcomes <- read_csv("data/d20_outcomes.csv")
+```
+
+```{r}
+
+d20_outcomes_plot <- ggplot(data = d20_outcomes, aes(x = outcome)) + 
+ geom_histogram(binwidth=1, colour="red", fill="lightpink") + 
+  labs( 
+    x = "d20 outomes",
+    title = "d20 counts")
+d20_outcomes_plot
+
+
+```
+
+```{r}
+d20x5_outcomes <- read_csv("data/d20x5_outcomes.csv")
+
+```
+
+
+```{r}
+d20X5_outcomes_plot <- ggplot(data = d20x5_outcomes, aes(x = outcome)) + 
+ geom_histogram(binwidth=2.5, colour="darkblue", fill="lightblue") + 
+  labs( 
+    x = "d20x5 outomes",
+    title = "d20x5 counts")
+
+d20X5_outcomes_plot
+
+```
+ Composition
+ - pension_surplus
+ - pension_liabilities
+
+
+```{r}
+pension_surplus <- read_csv("data/pension_surplus.csv")
+```
+
+```{r}
+pension_surplus_plot <- ggplot(data = pension_surplus, aes(x = balance, y = reorder(item, balance), fill = sign)) + 
+   geom_col() + 
+    xlim(-250, 100) +
+    labs(
+      x = "Balance",
+      y = "Item",
+      title = "Balance of selected items") + 
+  scale_fill_manual(values = c("tomato", "seagreen"), name = "", labels = c("negative", "positive")) +
+  theme_minimal()
+
+pension_surplus_plot
+```
+
+```{r}
+pension_liabilities <- read_csv("data/pension_liabilities.csv")
+```
+
+```{r}
+pension_liabilities_plot <- ggplot(data = pension_liabilities, aes(x = year, y = liability_millions, fill = liability_type)) + geom_bar(position="stack", stat="identity") + 
+  labs(
+      x = "Year",
+      y = "Liability (millions)",
+      fill = "Liability type",
+      title = "Cost of pension liability types, per year")
+  
+pension_liabilities_plot
+```
+
+view(pension_liabilities)
+

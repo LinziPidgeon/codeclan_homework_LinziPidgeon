@@ -1,0 +1,10 @@
+"0","```r
+select(all_deaths, -name, -allegiances, -year_of_death, -gender, -nobility)
+#or
+deaths_with_book <- select(all_deaths, starts_with(\"book\"), death_chapter)
+#puts death chapter first
+deaths_with_book <- select(all_deaths, death_chapter, starts_with(\"book\"))
+
+deaths_with_book <- select(all_deaths, contains(\"death\"))
+
+```"

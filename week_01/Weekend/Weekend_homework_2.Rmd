@@ -1,0 +1,189 @@
+---
+title: "`dplyr` Weekend Homework"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    df_print: paged
+    css: ../../../styles.css
+  pdf_document: default
+---
+As this is your first weekend homework, here are some tips: 
+
+* Try to schedule some time in your weekend to work on the homework so it's not suddenly Monday morning and you haven't gotten started yet (it happens).
+* Remember that the weekend homework is for your learning, so try to use it as an opportunity to apply and consolidate everything you've learned in the week.
+* Also use it as an opportunity to spend a bit more time making your code readable and reproducible, by practising commenting and writing some text around your steps and findings. You will thank yourself later! 
+  * This will be especially useful for this specific weekend homework as it's very open-ended and you will eventually forget your own thought process
+* A bit obvious, but don't spend your entire weekend working on the homework! Remember to spend time doing things you enjoy and rest up ahead of the following week.
+
+The data for this weekend homework is scraped from Goodreads (a website all about books) and made publicly available on Kaggle. You can read more about the data [here](https://www.kaggle.com/jealousleopard/goodreadsbooks).
+
+# MVP
+
+### First steps
+
+Load necessary packages and read in `books.csv`. Investigate dimensions, variables, missing values - you know the drill!
+
+### Up to you
+
+Now it's up to you... For this weekend homework there will be no specific tasks, just you and this dataset! Using everything you've learned this week, try to describe/summarise at least 5 things about this dataset - using R and the tidyverse of course! Feel free to find and use new functions if there is something that the tidyverse doesn't offer, but do try to use this homework to apply what you have learned this week. Be prepared to share one of your findings on Monday!
+
+### Remember
+
+Before you submit, go through your weekend homework and make sure your code is following best practices as laid out in the `coding_best_practice` lesson.
+
+```{r}
+# run libraries at start
+library(tidyverse)
+library(readxl)
+library(skimr)
+```
+
+```{r}
+# books csv data, loading in data
+books_data <- read_csv("data/books.csv")
+```
+
+Investigating the data
+```{r}
+#Investigating the data pt1
+view(books_data) # opens up excel-like table
+nrow(books_data) # details number of rows: 11,123
+ncol(books_data) # details number of columns: 13 (*check* - "rowid" added in)
+names(books_data) # lists the names of all 13 columns 
+dim(books_data) # dimensions of books dataset, confirms 11,123 rows and 13 columns
+
+```
+
+
+```{r}
+#Investigating the data pt2.1
+glimpse(books_data) 
+```
+glimpse notes:
+i) Displays columns down the side and shows as much data as possible. 
+ii) Indicates character variables (<chr>) i.e. text and those which are double (<dbl>) i.e. numeric as can/does contain                          decimals
+
+                       
+```{r}
+#Investigating the data pt2.2
+skim(books_data) # summarises the data: 7 character variables (text) in books.csv and 6 numeric variables. *Note the numeric includes the                       added "rowid" column. 
+```
+skim results:
+1. Character variables: 
+  n_missing = 0 for all. Indicating no empty fields i.e. all have entries under "title", "author" etc but there could be unexpected entries.
+  n_unique = number of unique values for each variable. For example "language_code" = 27, there are 27 different entries under language code.
+
+Code to confirm 27 unique language entries
+```{r}
+summarise(group_by(books_data,language_code))
+```
+  
+2. Numeric variables:
+  n_missing = 0 for all. Indicating no empty fields i.e. all have entries under "average_rating" etc but there could be unexpected entries.
+  mean = 336.405556 for "num_pages". The average number of pages for all books in books.csv is 336
+ 
+Code to confirm mean for "num_pages" is 336.4056
+```{r}
+mean(books_data$num_pages)
+```
+  
+
+
+
+Summarising the data
+
+Select
+1. Selecting all columns, bar "rowid"
+2. Selecting all columns containing a "t" in the name
+3. Selecting first 4 columns and columns: "num_pages", "text_reviews_count" "publication_date" and "publisher"
+
+```{r}
+#Summarising the data pt1.1 : Select
+
+select(books_data, -rowid)
+
+columns_with_t <- select(books_data, contains("t"))
+
+column_range <- select(books_data, rowid:authors, num_pages:publisher, -ratings_count)
+
+```
+
+
+Filter
+1. Filter for books containing the word "dog" in the title 
+2. Filter for books by Agatha Christie with an average rating greater than or equal to 3.66
+3. Filter on books written with an en-GB, en-CA, en-US or eng language code and a ratings count higher than 5
+
+```{r}
+#Summarising the data pt1.2 : Filter
+
+dog_in_title <- books_data %>% 
+filter(grepl("dog | Dog", title))
+view(dog_in_title)
+
+filter(books_data, authors == "Agatha Christie" & average_rating >= 3.66)
+
+English_five_rating_count <- books_data %>% 
+  filter(language_code %in% c("en-GB", "en-US", "en-CA", "eng") & ratings_count > 5)
+view(English_five_rating_count)
+
+#Change to not in English
+Not_English_five_rating_count <- books_data %>% 
+  filter(!language_code %in% c("en-GB", "en-US", "en-CA", "eng") & ratings_count > 5)
+view(Not_English_five_rating_count)
+
+```
+
+
+Mutate and Arrange
+1. Creating new column that indicates the number of non-text reviews, placed after "ratings_count" column, filtered for less than 10
+2. Creating a new column that rounds the number of pages to the nearest 10, placed after "num_pages" column and arranged in descending order
+
+```{r}
+# Summarising the data pt1.3 : Mutate and Arrange
+books_data %>% 
+  mutate(non_text_reviews = ratings_count - text_reviews_count, 
+         .after = ratings_count) %>% 
+  filter(non_text_reviews < 10)
+
+ books_data %>% 
+  mutate(rounded_rating = round(average_rating, 1),
+         .after = average_rating) %>% 
+  arrange(desc(rounded_rating))
+```
+
+
+Summarise and Group by
+1. Round average rating to nearest whole number and display book counts by languages and rounded rating 
+
+```{r}
+# Summarising the data pt1.3 : Summarise and Group by
+
+books_data %>% 
+    mutate(rounded_rating = round(average_rating, 0)) %>% 
+group_by(language_code, rounded_rating) %>% 
+summarise(book_counts = n()) %>% 
+  arrange(desc(book_counts))
+```
+
+
+Charts
+
+```{r}
+# Summarising the data pt2: 
+
+Agatha_Christie_plot <- ggplot(filter(books_data, authors == "Agatha Christie"), aes(x = publisher)) + 
+  geom_bar() + 
+  geom_bar(fill = "purple") +
+    labs( 
+    x = "Publisher",
+    y = "Book counts",
+    title = "Publishers of Agatha Christie books") +
+  ylim(0, 10) +
+  coord_flip()
+
+
+Agatha_Christie_plot
+
+``` 

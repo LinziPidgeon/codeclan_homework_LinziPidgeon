@@ -1,0 +1,9 @@
+"0","```r
+excel_sheets('data/edinburgh_seedmix.xlsx')
+```"
+"1","[1] \"South West Neighbourhood\" \"East Neighbourhood\"       \"North Neighbourhood\"     
+[4] \"South Neighbourhood\"      \"West Neighbourhood\"      
+"
+"0","```r
+seedmix_north <- read_excel('data/edinburgh_seedmix.xlsx', sheet = \"North Neighbourhood\")
+```"

@@ -1,0 +1,5 @@
+"0","```r
+all_deaths %>% 
+  mutate(average_year_of_death = mean(year_of_death, na.rm = TRUE),
+         .after = year_of_death)
+```"

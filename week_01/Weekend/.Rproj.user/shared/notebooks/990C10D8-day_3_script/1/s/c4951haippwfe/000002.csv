@@ -1,0 +1,4 @@
+"0","```r
+filter(all_deaths, allegiances == 'Lannister' & gender == 1)
+filter(all_deaths, allegiances == 'Lannister' | allegiances == 'House Stark')
+```"

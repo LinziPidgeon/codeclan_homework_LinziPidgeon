@@ -1,0 +1,5 @@
+"0",""
+"0","columns_with_t <- select(books_data, contains(""t""))"
+"0",""
+"0","column_range <- select(books_data, rowid:authors, num_pages:publisher, -ratings_count)"
+"0",""

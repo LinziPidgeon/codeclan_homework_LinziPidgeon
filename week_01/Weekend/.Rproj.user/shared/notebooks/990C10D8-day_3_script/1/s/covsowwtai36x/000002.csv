@@ -1,0 +1,4 @@
+"0","```r
+numbers <- c(1:10, NA)
+mean(numbers, na.rm = TRUE) # IF NA remove, true = remove NA values
+```"

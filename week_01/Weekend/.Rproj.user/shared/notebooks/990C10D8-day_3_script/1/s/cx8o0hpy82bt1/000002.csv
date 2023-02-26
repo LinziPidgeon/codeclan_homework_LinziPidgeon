@@ -1,0 +1,8 @@
+"0","```r
+seedmix <- read_excel('data/edinburgh_seedmix.xlsx')
+seedmix_north <- read_excel('data/edinburgh_seedmix.xlsx', sheet = 3)
+
+
+seedmix
+seedmix_north
+```"

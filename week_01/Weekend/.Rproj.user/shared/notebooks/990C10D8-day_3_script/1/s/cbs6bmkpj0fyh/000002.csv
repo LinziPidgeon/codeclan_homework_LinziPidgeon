@@ -1,0 +1,7 @@
+"0","```r
+all_deaths %>% 
+  select(name, nobility, gender) %>% # not really needed 
+group_by(gender) %>% 
+summarise(character_count = n()) %>% 
+  select(character_count)
+```"

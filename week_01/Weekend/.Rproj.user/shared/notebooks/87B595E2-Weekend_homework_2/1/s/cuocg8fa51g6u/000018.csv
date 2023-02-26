@@ -1,0 +1,24 @@
+"0","#Investigating the data pt2.2"
+"0","skim(books_data) # summarises the data: 7 character variables (text) in books.csv and 6 numeric variables. *Note the numeric includes the                       added ""rowid"" column. "
+"1","── Data Summary ────────────────────────
+"
+"1","                           Values    
+"
+"1","Name                       books_data
+"
+"1","Number of rows             11123     
+"
+"1","Number of columns          13        
+"
+"1","_______________________              
+"
+"1","Column type frequency:               
+"
+"1","  character                7         
+"
+"1","  numeric                  6         
+"
+"1","________________________             
+"
+"1","Group variables            None      
+"

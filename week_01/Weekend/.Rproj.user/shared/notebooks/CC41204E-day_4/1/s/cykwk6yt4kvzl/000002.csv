@@ -1,0 +1,10 @@
+"0","```r
+Amount_Spent <- c(9.1, 8.55, 14.32, 14.17, 14.34, 7.97, 9.79, 11.47, 12.44)
+Category <- c(\"Lunch\", \"Dinner\", \"Lunch\", \"Lunch\", \"Cinema\", \"Drinks\", \"Lunch\", \"Lunch\", \"Dinner\")
+my_week_of_spending <- tibble(amount_spent = AmountSpent, spending_category = Category)
+str(my_week_of_spending)
+View(my_week_of_spending)
+my_week_of_spending
+summarise(my_week_of_spending, sum(AmountSpent))
+summarise(filter(my_week_of_spending, Spending_Category == \"Lunch\"), sum(AmountSpent))
+```"

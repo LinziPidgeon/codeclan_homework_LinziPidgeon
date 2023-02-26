@@ -1,0 +1,7 @@
+"0","#Summarising the data pt1.2 : Filter"
+"0",""
+"0","dog_in_title <- books_data %>% "
+"0","filter(grepl(""dog | Dog"", title))"
+"0","view(dog_in_title)"
+"0",""
+"0","filter(books_data, authors == ""Agatha Christie"" & average_rating >= 3.66)"

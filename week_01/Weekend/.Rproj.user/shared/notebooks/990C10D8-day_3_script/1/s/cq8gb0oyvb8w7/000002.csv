@@ -1,0 +1,5 @@
+"0","```r
+all_deaths %>% 
+  mutate(years_survived = year_of_death - 298, 
+         .after = year_of_death)
+```"
