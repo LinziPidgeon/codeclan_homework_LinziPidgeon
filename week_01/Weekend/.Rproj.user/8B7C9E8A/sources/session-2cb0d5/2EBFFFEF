@@ -3,7 +3,7 @@
     "path": "C:/Users/user/Desktop/CodeClan/codeclan_homework_LinziPidgeon/codeclan_homework_LinziPidgeon/week_01/Weekend/Weekend_homework_2.Rmd",
     "project_path": "Weekend_homework_2.Rmd",
     "type": "r_markdown",
-    "hash": "911558404",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1677440805073.0,
@@ -14,15 +14,15 @@
         "chunk_output_type": "inline",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "175,103",
-        "scrollLine": "169"
+        "cursorPosition": "7,28",
+        "scrollLine": "0"
     },
     "folds": "",
     "lastKnownWriteTime": 1677446287,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1677446287662,
+    "last_content_update": 1677446624942,
     "read_only": false,
     "read_only_alternatives": []
 }
