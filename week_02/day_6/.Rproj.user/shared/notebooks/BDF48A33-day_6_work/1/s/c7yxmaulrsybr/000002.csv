@@ -1,0 +1,5 @@
+"0","```r
+inner_join(customers, orders, \"customer_ID\")
+```"
+"1","Warning: Each row in `x` is expected to match at most 1 row in `y`.
+"

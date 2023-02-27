@@ -1,5 +1,3 @@
+"0","#Summarising the data pt1.1 : Select"
 "0",""
-"0","columns_with_t <- select(books_data, contains(""t""))"
-"0",""
-"0","column_range <- select(books_data, rowid:authors, num_pages:publisher, -ratings_count)"
-"0",""
+"0","select(books_data, -rowid)"

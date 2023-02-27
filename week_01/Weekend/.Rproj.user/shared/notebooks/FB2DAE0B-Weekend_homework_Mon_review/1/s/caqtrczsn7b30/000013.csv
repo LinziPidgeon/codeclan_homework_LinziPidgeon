@@ -1,0 +1,5 @@
+"0","# Summarising the data pt1.3 : Mutate and Arrange"
+"0","books_data %>% "
+"0","  mutate(non_text_reviews = ratings_count - text_reviews_count, "
+"0","         .after = ratings_count) %>% "
+"0","  filter(non_text_reviews < 10)"

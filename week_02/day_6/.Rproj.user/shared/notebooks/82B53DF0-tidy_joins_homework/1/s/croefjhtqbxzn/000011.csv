@@ -1,0 +1,8 @@
+"0","exams_long <- exams %>% "
+"0","  pivot_longer("
+"0","    cols = exam_Q1:exam_Q10,"
+"0","    names_to = ""exam_question"","
+"0","    values_to = ""score"""
+"0","  )"
+"0",""
+"0","view(exams_long)"

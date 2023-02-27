@@ -1,0 +1,7 @@
+"0","books_by_year <- books %>%"
+"0","  mutate(year = format(as.Date(books$publication_date,"
+"0","                               format=""%m/%d/%Y""), ""%Y""),"
+"0","         .after = publication_date) "
+"2","Error in mutate(., year = format(as.Date(books$publication_date, format = ""%m/%d/%Y""),  : 
+  object 'books' not found
+"

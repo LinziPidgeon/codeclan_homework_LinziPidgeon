@@ -1,0 +1,5 @@
+"0","#loading in data"
+"0","exams <- read_csv(""data/exam_scores.csv"", show_col_types = FALSE)"
+"0","view(exams)"
+"0",""
+"0",""

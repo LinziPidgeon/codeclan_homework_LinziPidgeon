@@ -1,0 +1,134 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+# run libraries at start
+library(tidyverse)
+library(readxl)
+library(skimr)
+```
+
+inner join() : returns all rows from 2 tables with matching records.
+left join() : returns all records in left table and any matching records
+right join() : returns all records in right table and any matching records
+full join(): returns all records in both tables, matches where possible
+
+Filtering join:
+semi_join(): returns only rows from the first table where one or more matches are found in the second tables
+
+anti_join(): returns only rows from the first table, that got not matches i tneh second table
+
+Binding rows:
+bind_rows():
+bind_columns():
+
+```{r}
+customers <- tibble(
+  customer_ID = c(001, 002, 004, 005, 008, 010), 
+  name = c("John Smith", "Jane Adams", "Robert Landry", "Jane Tow", "Raul Tann", "Hilary Joyal"),
+  email_address = c("johnsmith@gmail.com", "janea@gmail.com", "rlabdry@hotmail.com", "janet89@aol.com", "paul.tann1@gmail.com", NA),
+  shipping_address = c("32 Station Road, Edinburgh", "42 Park Drive, Edinburgh", NA, "10 Gardiner Rd, Edinburgh", "12 Main St, Edinburgh", " 234 Queensferry Rd, Edinburgh,")
+)
+
+view(customers)
+```
+
+
+
+```{r}
+orders <- tibble(
+  customer_ID = c(001, 002, 005, 010, 012, 001), 
+  order_number = c("KU65781", "SU98201", "JS76821", "YR28212", "JS91221","YR21873"),
+  order_total = c("£32.50", "£56.00", "£100.02", "£20.25", "£39.50", "£45.00"),
+  product_code = c("XZY780", "XYZ123", "XYZ256", "XYZ262", "XYZ345", "XYZ127")
+)
+
+view(orders)
+```
+
+customerID = foreign key
+order ID = primary key
+
+Mutating join
+Inner_join(), COMMON COLUMN = "customer_ID"
+```{r}
+inner_join(customers, orders, "customer_ID")
+```
+Left_join
+maintains all items in the left table, whether there is a match in right table or not
+```{r}
+left_join(customers, orders, "customer_ID")
+```
+
+Right_join
+maintains all items in the right table, whether there is a match in leftt table or not
+```{r}
+right_join(customers, orders, "customer_ID")
+```
+
+#full_join()
+
+```{r}
+full_join(customers, orders, "customer_ID")
+```
+
+Also join columns that have different names
+
+```{r}
+customers_adjusted <- rename(customers, this_is_new_identifier = customer_ID)
+
+customers_adjusted
+```
+
+```{r}
+inner_join(customers_adjusted, orders, c("this_is_new_identifier" = "customer_ID"))
+```
+
+Filtering joins
+semi_join()
+
+```{r}
+semi_join(customers, orders, "customer_ID")
+```
+
+
+anti_join()
+
+```{r}
+anti_join(customers, orders, "customer_ID")
+```
+
+Binding
+
+```{r}
+statuses <- tibble(
+  status = c("active", "active", "inactive", "inactive", "active", "inactive"))
+```
+
+
+
+```{r}
+bind_cols(customers, statuses)
+```
+
+when binding, in statuses need 6, anymore and it won't work 
+
+```{r}
+past_customers <- tibble(
+  customer_ID = c(020, 021), 
+  name = c("Dave Brown", "Jess Bishop"),
+  email_address = c("dbrown@hotmail.com", "jessb@gmail.com"),
+  shipping_address = c("57 Park View, Leith", "12 Reid Way, Broxburn")
+)
+
+past_customers
+```
+
+
+
+```{r}
+bind_rows(customers, past_customers)
+```
+The number of columns has to be identical to allow it to join.

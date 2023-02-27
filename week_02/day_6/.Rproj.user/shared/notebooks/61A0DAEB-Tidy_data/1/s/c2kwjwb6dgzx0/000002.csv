@@ -1,0 +1,10 @@
+"0","```r
+visits_tidy <- visits_wide %>% 
+  separate(
+    col = IcdChapter,
+    into = c(\"code\", \"description\"),
+    sep = \"\\. \"
+  )
+
+visits_tidy
+```"

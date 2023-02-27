@@ -1,0 +1,7 @@
+"0","dataset_picture <-"
+"0","  full_join(card, customer, ""Cust_ID"") %>% "
+"0","  full_join(transaction, c(""Card_Number"" = ""Credit_Card_ID"")) %>% "
+"0","  inner_join(fraud, ""Transaction_ID"")"
+"2","Warning: Each row in `x` is expected to match at most 1 row in `y`."
+"0","  "
+"0"," dataset_picture "

@@ -1,0 +1,5 @@
+"0","```r
+customers_adjusted <- rename(customers, this_is_new_identifier = customer_ID)
+
+customers_adjusted
+```"
