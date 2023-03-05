@@ -1,0 +1,8 @@
+"0","```r
+pattern <- \"[a-c]\" #looking for a string of a, b or c. Whereas \"abc\" would look for abc combined.\"-\" here keeps it as a range, whereas \":\" here is not seen as a range, it's seen as a separator
+
+
+#\"[a-zA-Z]\" - checks for both lower and upper case
+strings %>% 
+   str_detect(pattern)
+```"

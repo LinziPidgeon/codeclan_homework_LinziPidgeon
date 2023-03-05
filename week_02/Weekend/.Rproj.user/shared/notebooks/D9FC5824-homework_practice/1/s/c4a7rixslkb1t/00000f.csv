@@ -1,0 +1,4 @@
+"0","meteorite_ordered <- meteorite_gtr_1000g %>% "
+"0","  arrange(desc(year))"
+"0",""
+"0","view(meteorite_ordered)"

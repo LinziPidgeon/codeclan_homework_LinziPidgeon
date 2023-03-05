@@ -1,0 +1,7 @@
+"0","```r
+#data about school children and the weight of their bags
+backpack %>% 
+  mutate(back_problems = as.logical(back_problems)) %>% 
+filter(!back_problems) %>% 
+filter(major == \"Bio\")
+```"

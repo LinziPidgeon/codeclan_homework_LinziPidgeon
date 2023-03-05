@@ -1,0 +1,10 @@
+"0","```r
+
+string <- c(\"@emailprovider.com\",\"codeclan@emailprovider.com\",\"example@emailprovider.com\")
+pattern <- \"[a-z]+@emailprovider.com\"
+
+string %>% 
+  str_extract(pattern)
+```"
+"1","[1] NA                           \"codeclan@emailprovider.com\" \"example@emailprovider.com\" 
+"

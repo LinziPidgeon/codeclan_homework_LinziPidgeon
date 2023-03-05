@@ -1,0 +1,4 @@
+"0",""
+"0","#1 - read the data into R"
+"0","meteorite_data <- read.csv(""data/meteorite_landings.csv"")"
+"0","head(meteorite_data, n= 20)"

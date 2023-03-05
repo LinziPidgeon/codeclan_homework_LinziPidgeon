@@ -1,0 +1,6 @@
+#using pr
+library(prodigenr)
+prodigenr::setup_project("CodeClan/codeclan_work/week_2/day_9/reproducibility")
+
+
+

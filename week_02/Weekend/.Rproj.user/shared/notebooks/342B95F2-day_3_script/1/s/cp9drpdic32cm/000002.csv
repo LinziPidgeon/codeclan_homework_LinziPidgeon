@@ -1,0 +1,14 @@
+"0","```r
+all_deaths %>% 
+  arrange(gender)
+
+all_deaths %>% 
+  arrange(book_intro_chapter)
+
+
+all_deaths %>% 
+  arrange(name)
+
+all_deaths %>% 
+  arrange(desc(name)) # descending name order
+```"

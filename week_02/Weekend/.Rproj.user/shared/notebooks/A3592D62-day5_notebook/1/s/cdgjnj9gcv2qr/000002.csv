@@ -1,0 +1,9 @@
+"0","```r
+iris %>% 
+  select(\"Sepal.Length\", \"Species\", \"Petal.Length\")
+cols_of_interst <- c(\"Sepal.Length\", \"Species\", \"Petal.Length\")
+
+
+iris %>% 
+  select(all_of(cols_of_interst))
+```"

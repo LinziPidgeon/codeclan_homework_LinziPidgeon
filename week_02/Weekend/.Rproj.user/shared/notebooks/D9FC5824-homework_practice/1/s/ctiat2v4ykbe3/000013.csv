@@ -1,0 +1,6 @@
+"0",""
+"0",""
+"0","meteorite_missings <- coords_update %>% "
+"0","  mutate(latitude = coalesce(latitude, 0,),"
+"0","         longitude = coalesce(longitude,0,)"
+"0","         )"

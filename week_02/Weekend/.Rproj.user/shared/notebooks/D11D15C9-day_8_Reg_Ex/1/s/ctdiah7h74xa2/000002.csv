@@ -1,0 +1,10 @@
+"0","```r
+#Extract the landline number
+
+pattern <- \"[0-9]+\\s+[0-9]+\"
+
+regex_practice %>% 
+  str_extract(pattern)
+```"
+"1","[1] NA             \"01010 123456\" NA             NA            
+"

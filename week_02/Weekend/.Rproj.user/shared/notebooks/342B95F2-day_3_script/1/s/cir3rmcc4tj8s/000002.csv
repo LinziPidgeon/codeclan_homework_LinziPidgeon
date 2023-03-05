@@ -1,0 +1,9 @@
+"0","```r
+nrow(all_deaths)
+```"
+"1","[1] 917
+"
+"0","```r
+all_deaths %>% 
+  summarise(n_rows = n())
+```"

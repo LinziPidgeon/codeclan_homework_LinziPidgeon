@@ -1,0 +1,3 @@
+"0","movies_data %>% "
+"0","filter(name == ""Little Mermaid, The"") %>% "
+"0","select(id)"

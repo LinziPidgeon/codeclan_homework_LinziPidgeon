@@ -1,0 +1,8 @@
+"0","diet_comp_clean <- diet_comp_clean %>% "
+"0","   mutate(kcal_source = str_replace_all(kcal_source, ""\\([A-Za-z]+"","""")) %>% "
+"0","  mutate(kcal_source = str_replace_all(kcal_source, ""\\([0-9]+\\)\\)"","""")) %>% "
+"0","  rename(""country"" = ""Entity"") %>% "
+"0","clean_names()"
+"0",""
+"0",""
+"0","view(diet_comp_clean)"

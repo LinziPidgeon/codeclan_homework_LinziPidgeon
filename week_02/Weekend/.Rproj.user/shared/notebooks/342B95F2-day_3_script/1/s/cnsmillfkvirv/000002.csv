@@ -1,0 +1,18 @@
+"0","```r
+all_deaths %>% 
+  mutate(book_of_death = as.character(book_of_death)) %>% 
+  glimpse()
+
+
+
+## R has tried to convert text to number, rather than error it returns NA
+all_deaths %>% 
+  mutate(name = as.numeric(name)) 
+
+
+
+all_deaths %>% 
+  mutate(nobility = as.logical(nobility)) 
+
+
+```"

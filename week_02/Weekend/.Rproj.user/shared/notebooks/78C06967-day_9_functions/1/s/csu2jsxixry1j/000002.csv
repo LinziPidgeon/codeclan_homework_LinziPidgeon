@@ -1,0 +1,14 @@
+"0","```r
+adder <- function(input1) {
+  
+  #in here goes lots of code
+  
+  output1 <- input1 +10
+  
+  return(output1)
+}
+
+adder(2)
+```"
+"1","[1] 12
+"

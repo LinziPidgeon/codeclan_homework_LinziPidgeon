@@ -1,0 +1,4 @@
+"0","```r
+all_deaths %>% 
+  summarise(female_sum = sum(gender == 0))
+```"

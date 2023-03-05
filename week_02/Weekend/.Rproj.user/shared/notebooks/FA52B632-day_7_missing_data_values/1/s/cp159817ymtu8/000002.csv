@@ -1,0 +1,6 @@
+"0","```r
+#select the monthly_charges column to look at what different missing values we have
+
+comms_data %>% 
+  filter(is.na(monthly_charges))
+```"

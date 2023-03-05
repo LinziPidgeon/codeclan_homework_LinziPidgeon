@@ -1,0 +1,8 @@
+"0","```r
+# All letters lower-case
+
+pangram %>% 
+str_to_lower()
+```"
+"1","[1] \"the quick brown fox jumps over the lazy dog\"
+"

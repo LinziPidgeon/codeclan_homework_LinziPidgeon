@@ -1,0 +1,3 @@
+"0","#Missing data"
+"0","coords_update %>%"
+"0","  summarise(count = sum(is.na(latitude))) #7315"

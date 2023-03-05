@@ -1,0 +1,4 @@
+"0","```r
+single_quote_string <- 'This is a single it\'s quote string' # can use backslah to indicate apostrophe and not end of a string
+double_quote_string <- \"Double quotes work just as well\"
+```"

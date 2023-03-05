@@ -1,0 +1,7 @@
+"0","```r
+unbroken_string %>% 
+str_split(pattern = \" \", n = 4) %>% #splitting at the spaces, Gives a list within a vector
+  flatten_chr() #just gives a vector, not a list
+```"
+"1","[1] \"We're\"                \"going\"                \"to\"                   \"break this string up\" \"extra\"                \"text\"                
+"

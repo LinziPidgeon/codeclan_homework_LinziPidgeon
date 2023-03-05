@@ -1,0 +1,6 @@
+"0","```r
+some_numbers <- c(1, 2, 3, 4)
+a_number <- 17
+some_words <- c(\"test\", \"1\", \"2\")
+a_word <- \"Rstudio\"
+```"

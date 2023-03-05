@@ -1,0 +1,7 @@
+"0","```r
+
+
+all_deaths %>% 
+group_by(gender) %>% 
+  summarise(gender_count = n())
+```"

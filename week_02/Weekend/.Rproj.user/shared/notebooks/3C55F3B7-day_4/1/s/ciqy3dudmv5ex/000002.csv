@@ -1,0 +1,10 @@
+"0","```r
+library(tidyverse)
+library(CodeClanData)
+library(readxl)
+library(skimr)
+
+install.packages('styler')
+library(styler)
+install.packages('datapasta')
+```"

@@ -1,0 +1,5 @@
+"0","```r
+comms_data %>% 
+  #drop_na(monthly_charges) # only dropping in monthly charges
+  drop_na() # drops all na empty values
+```"

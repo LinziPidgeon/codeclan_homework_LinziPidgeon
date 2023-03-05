@@ -1,0 +1,10 @@
+"0","```r
+make_price <- function(any_whole_number) {
+  output <- paste(\"£\",any_whole_number)
+  return(output)
+}
+
+make_price(123)
+```"
+"1","[1] \"£ 123\"
+"

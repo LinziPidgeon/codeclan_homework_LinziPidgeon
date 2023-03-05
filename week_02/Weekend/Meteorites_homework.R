@@ -1,0 +1,61 @@
+library(tidyverse)
+library(stringr)
+library(prodigenr)
+
+#1. Read the data into R
+meteorite_data <- read.csv("data/meteorite_landings.csv")
+head(meteorite_data, n= 20)
+names(meteorite_data)
+glimpse(meteorite_data)
+
+
+#2. Change the names of the variables to follow our naming standards.
+meteorite_rename <- meteorite_data %>% 
+  rename(mass_g = mass..g.)
+
+
+#3. Split the column `GeoLocation` into latitude and longitude, the new latitude and longitude columns should be numeric.
+meteorite_separate <- meteorite_rename %>% 
+  separate(GeoLocation, c("latitude", "longitude"), sep = ",") 
+coords_update <- meteorite_separate %>% 
+  mutate(latitude = str_replace_all(latitude, "\\(", ""),
+         longitude = str_replace_all(longitude, "\\)", "")) %>% 
+  mutate(latitude = as.numeric(latitude),
+         longitude = as.numeric(longitude))
+
+coords_update
+
+
+#4. Replace any missing values in latitude and longitude with zeros.
+coords_update %>%
+  summarise(count = sum(is.na(latitude))) #7315
+coords_update %>%
+  summarise(count = sum(is.na(longitude))) #7315
+
+
+meteorite_missings <- coords_update %>% 
+  mutate(latitude = coalesce(latitude, 0,),
+         longitude = coalesce(longitude,0,)
+  )
+
+#Missing data check
+meteorite_missings %>%
+  summarise(count = sum(is.na(latitude))) #0
+meteorite_missings %>%
+  summarise(count = sum(is.na(longitude))) #0
+
+
+#5. Remove meteorites less than 1000g in weight from the data.
+meteorite_gtr_1000g <- meteorite_missings %>% 
+  filter(mass_g >= 1000)
+
+
+#6. Order the data by the year of discovery.
+meteorite_ordered <- meteorite_gtr_1000g %>% 
+  arrange(desc(year))
+
+view(meteorite_ordered)
+
+write.csv(meteorite_ordered,"C:\\Users\\user\\Documents\\CodeClan\\codeclan_homework_LinziPidgeon\\codeclan_homework_LinziPidgeon\\week_02\\Weekend\\data\\meteorite_ordered.csv")
+
+#prodigenr::setup_project("CodeClan/codeclan_work/codeclan_homework_LinziPidgeon/codeclan_homework_LinziPidgeon/week_02/Weekend/reproducibility")

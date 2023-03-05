@@ -1,0 +1,4 @@
+"0","#loading in data"
+"0","actors_data <- read_csv(""data/actors.csv"", show_col_types = FALSE)"
+"0","movies_data <- read_csv(""data/movies.csv"", show_col_types = FALSE)"
+"0","roles_data <- read_csv(""data/roles.csv"", show_col_types = FALSE)"

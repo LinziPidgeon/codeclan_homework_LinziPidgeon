@@ -1,0 +1,9 @@
+"0","```r
+
+  student <- c(\"Surya\", \"Jamie\", \"John\")
+  question_1 <- c(10, 4, 6)
+  question_2 <- c(6, 9, 8)
+  question_3 <- c(10, 7, 6)
+exam_results_ans <- data.frame(student,question_1,question_2,question_3)
+
+```"

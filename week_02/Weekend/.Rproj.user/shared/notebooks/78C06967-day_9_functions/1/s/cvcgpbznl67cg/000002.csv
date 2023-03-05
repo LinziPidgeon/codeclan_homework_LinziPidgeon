@@ -1,0 +1,16 @@
+"0","```r
+animals_sorted <- sort(animals)
+hats_sorted <- sort(hats)
+trees_sorted <- sort(trees)
+
+animals_joined <- paste(animals_sorted, collapse = ', ')
+
+str_c('Ordered list: ', animals_joined)
+```"
+"1","[1] \"Ordered list: Cat, Dog, Elephant, Frog, Monkey\"
+"
+"0","```r
+animals_joined
+```"
+"1","[1] \"Cat, Dog, Elephant, Frog, Monkey\"
+"

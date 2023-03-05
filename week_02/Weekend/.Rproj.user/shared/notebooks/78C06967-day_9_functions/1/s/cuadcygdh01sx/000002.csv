@@ -1,0 +1,14 @@
+"0","```r
+adder <- function(input1) {
+  
+  #in here goes lots of code
+  
+  output1 <- ((input1 +10)(input1 +100)(input1 +50))
+  
+  return(output1)
+}
+
+adder(6)
+```"
+"1","Error in adder(6) : attempt to apply non-function
+"

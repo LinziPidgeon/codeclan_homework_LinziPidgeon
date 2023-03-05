@@ -1,0 +1,5 @@
+"0","```r
+
+#quick conflict resolution  - access function from package
+stats::filter()
+```"

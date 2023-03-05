@@ -1,0 +1,6 @@
+"0","```r
+all_deaths %>% 
+  mutate(book_of_death_times_5 = book_of_death * 5,
+         .before = year_of_death) %>% 
+  filter(book_of_death_times_5 < 20)
+```"

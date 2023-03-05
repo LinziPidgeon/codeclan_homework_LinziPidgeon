@@ -1,0 +1,17 @@
+"0","```r
+library(skimr)
+
+skim(all_deaths)
+```"
+"1","── Data Summary ────────────────────────
+                           Values    
+Name                       all_deaths
+Number of rows             917       
+Number of columns          13        
+_______________________              
+Column type frequency:               
+  character                2         
+  numeric                  11        
+________________________             
+Group variables            None      
+"

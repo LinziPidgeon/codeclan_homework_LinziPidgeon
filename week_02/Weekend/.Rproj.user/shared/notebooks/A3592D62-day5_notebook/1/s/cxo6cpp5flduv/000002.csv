@@ -1,0 +1,15 @@
+"0","```r
+
+#1. get the mean sepal width
+mean_sepal_width <- iris %>%
+  summarise(mean_sepal_width = mean(Sepal.Width)) %>% 
+  pull(mean_sepal_width)
+
+#aside (test something is a vector)
+is.atomic(mean_sepal_width) # is this a vector?
+class(mean_sepal_width)
+  
+#2. use our mean to filter  
+iris %>%
+  filter(Sepal.Width > mean_sepal_width)
+```"

@@ -1,0 +1,5 @@
+"0","```r
+all_deaths %>%
+  mutate (empty_book_intro = is.na(book_intro_chapter),
+          .after = book_intro_chapter) 
+```"

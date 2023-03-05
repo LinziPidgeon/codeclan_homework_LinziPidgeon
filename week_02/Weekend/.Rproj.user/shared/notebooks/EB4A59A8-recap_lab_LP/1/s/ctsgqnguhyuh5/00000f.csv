@@ -1,0 +1,2 @@
+"0","meteorite_rename <- meteorite_data %>% "
+"0","  rename(mass_g = mass..g.)"

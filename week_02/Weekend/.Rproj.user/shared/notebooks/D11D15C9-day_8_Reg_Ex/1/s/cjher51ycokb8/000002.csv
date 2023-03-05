@@ -1,0 +1,11 @@
+"0","```r
+name_pattern <- \"your_name_here\"
+location_pattern <- \"your_town_here\"
+
+regex_practice %>% 
+  str_replace_all(name_pattern, \"Surya\") %>% 
+  str_replace_all(location_pattern, \"Edinburgh\") 
+```"
+"1","[1] \"Colin's mobile number definitely isn't 07777777777.\"    \"A landline might be 01010 123456.\"                     
+[3] \"Mhairi, Del, Aileen and Steph helped write these notes\" \"I'm called Surya and I live in Edinburgh.\"             
+"

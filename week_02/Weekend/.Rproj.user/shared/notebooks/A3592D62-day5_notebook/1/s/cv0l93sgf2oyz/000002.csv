@@ -1,0 +1,21 @@
+"0","```r
+a_logical_vector <- c(TRUE, FALSE, NA, TRUE)
+class(a_logical_vector) # checks the class (data type) of an object
+```"
+"1","[1] \"logical\"
+"
+"0","```r
+as.numeric(a_logical_vector) # convert to numeric
+```"
+"1","[1]  1  0 NA  1
+"
+"0","```r
+sum(a_logical_vector, na.rm = TRUE)
+```"
+"1","[1] 2
+"
+"0","```r
+sum(as.numeric(a_logical_vector), na.rm = TRUE)
+```"
+"1","[1] 2
+"

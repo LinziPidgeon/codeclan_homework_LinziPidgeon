@@ -1,0 +1,232 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+```
+
+Functions
+- better understanding of how functions work
+- be able to write your own functions
+- know best practice for writing R functions
+
+What are they for/
+
+A (usually small) encapsulated code snipet that can be reused
+
+
+```{r}
+nchar(x, type = "chars", allowNA = FALSE, keepNA = NA)
+```
+
+```{r}
+#passing by posiiton 
+nchar('qwertyuiop', 'chars', FALSE, NA)# works because the order of inputs matches what the function expects
+#nchar('chars', FALSE, NA, 'qwertyuiop')# gives an error as it reads FALSE as type
+
+nchar('chars', FALSE, NA, x ='qwertyuiop')
+
+#passing by name. If the inputs are in the wrong position, give them a name.
+nchar(allowNA = FALSE, type = 'chars', keepNA = NA, x ='qwertyuiop') 
+```
+```{r}
+nchar('qwertyuiop', 'chars', allowNA = FALSE, keepNA=NA)
+```
+```{r}
+?select
+```
+
+##the dots, '....'
+```{r}
+paste('aaaaaa', 'bbbb', 'cccccccc', 'dddddddddddd')
+paste('aaaaaa', 'bbbb', 'cccccccc', 'dddddddddddd', spe = '----')
+
+#in the help function where you see ..., that will allow you to continue to keep adding, to stop, add the names again. Can be found in the help.
+```
+```{r}
+vec <- c('word 1', 'word two', 'and another word')
+
+#forloop
+
+nchar(vec)
+```
+```{r}
+  nchar('how many letters')
+```
+
+
+##Create our first function
+inside {} is box content from slides]
+```{r}
+adder <- function(input1) {
+  
+  #in here goes lots of code
+  
+  output1 <- input1 +10
+  
+  return(output1)
+}
+
+adder(2)
+```
+Thats great in a world where we always want to add 10
+what if we want to sometimes add 100, and other times 50
+
+we need additional parameters aka inputs
+
+```{r}
+adder <- function(input1) {
+  
+  #in here goes lots of code
+  
+  output1 <- ((input1 +10)(input1 +100)(input1 +50))
+  
+  return(output1)
+}
+
+adder(6)
+
+```
+```{r}
+adder_G <- function(input1, input2) {
+  # here goes lots of code
+  output1 <- input1 * 10
+  output2 <- input2 * 100
+  
+  return(c(output1, output2))
+}
+
+adder_G(1, 2)
+```
+```{r}
+adder_Gm <- function(input1, input2) {
+  # here goes lots of code
+  output1 <- input1 * 10
+  output2 <- input2 * 100
+  output3 <- input2 * input1
+  
+  #return(c(output1, output2, output3))#
+  return(list(c(output1, output2, output3)))
+}
+
+adder_Gm(2, 3)
+```
+In a vector (with c) you cannot mix data types but with a list you can.
+
+
+```{r}
+a_global_var <- 6
+
+adder <- function(inp, nber = 100) { #can set up a default value
+  output <- inp + nber
+  output <- inp + a_global_var
+  return(output)
+}
+
+adder(inp = 2)
+adder(inp = 2, nber = 100)
+adder(inp = 2, nber = 50)
+
+output
+```
+can't access output as it's in the function above
+
+
+Write a function make_price() that takes as input any whole number, and returns it written as a price (i.e. with a ‘£’ in front of the number).
+For example 5 would become £5, and 123 would become £123.
+Try out your function a few times to test that it works.
+Hint
+Use the str_c() function
+
+```{r}
+
+#LP test
+make_price <- function(input1) {
+  
+  output1 <- str_c("£",input1)
+   return(output1)
+}
+  
+make_price(123)
+
+```
+
+
+```{r}
+make_price <- function(any_whole_number) {
+  output <- paste("£",any_whole_number)
+  return(output)
+}
+
+make_price(123)
+```
+
+```{r}
+make_price <- function(num) {
+  price <- stringr::str_c('£', num, ' pence')
+  return(price)
+}
+
+
+make_price(0.6)
+```
+
+
+```{r}
+triangle_number <- function(input) {
+  #stopifnot(is.integer(n))# need L after whole number
+  
+  output <- ((input*(input+1))/2) 
+  return(output)
+}
+
+
+triangle_number(100)
+
+triangle_number(5:9) # vectorization
+```
+
+```{r}
+triangle_number <- function(n) {
+  t <- n * (n + 1) / 2
+  return(t)
+}
+
+triangle_number(5)
+```
+
+
+##Why we write functions
+```{r}
+animals <- c("Cat", "Dog", "Monkey", "Elephant", "Frog")
+hats <- c("Bowler", "Sun Hat", "Baseball Cap", "Fez", "Trilby")
+trees <- c("Ash", "Elm", "Oak", "Willow", "Fir")
+```
+
+```{r}
+animals_sorted <- sort(animals)
+hats_sorted <- sort(hats)
+trees_sorted <- sort(trees)
+
+animals_joined <- paste(animals_sorted, collapse = ', ')
+
+str_c('Ordered list: ', animals_joined)
+
+animals_joined
+```
+```{r}
+make_ordered_list <- function(my_list) {
+  my_list_sorted <- sort(my_list)
+  my_list_joined <- paste(my_list_sorted, collapse = ', ')
+  my_message <- paste('Ordered list:', my_list_joined)
+  return(my_message)
+}
+
+make_ordered_list(my_list = animals)
+make_ordered_list(my_list = hats)
+make_ordered_list(my_list = trees)
+```
+
+functions - reduces repetitions and ensures consistency

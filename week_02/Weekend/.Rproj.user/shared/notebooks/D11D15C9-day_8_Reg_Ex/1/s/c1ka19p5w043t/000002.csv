@@ -1,0 +1,6 @@
+"0","```r
+
+pattern <- \"@[a-z0-9[:punct:]]+\" 
+student_info %>% 
+  mutate(emails = str_extract(emails, pattern))
+```"

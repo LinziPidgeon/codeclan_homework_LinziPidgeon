@@ -1,0 +1,9 @@
+"0","```r
+all_deaths %>% 
+  mutate(year_of_death = is.na(year_of_death))
+
+
+all_deaths %>% 
+  mutate(is_alive = is.na(year_of_death),
+         .after = year_of_death)
+```"

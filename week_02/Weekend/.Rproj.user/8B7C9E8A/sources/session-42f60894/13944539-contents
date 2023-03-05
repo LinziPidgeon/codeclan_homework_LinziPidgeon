@@ -1,0 +1,139 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+##Learning Objectives
+- understand the challenges of missing and null values
+- know potential methods of dealing with missing values
+- identify why the data was missing - random or pattern
+- be able to identify and justify the approach taken for each missing data item
+- be bale to tidy up a dataset and deal with missing values
+
+## How are missing values represented?
+
+In R the missing numeric values are coded by 'NA' or 'NaN'
+- 'NA' = Not available, generally interpreted as a missing value
+- 'NaN' = Not a Number, means some sort of invalid calculation, e.g. 0/0
+
+## What should we do with mising values?
+
+#1. Drop them
+- delete all data from any participant with missing data
+ (issues with size of dataset)
+ 
+#2. Replace them with something else
+- this is known as imputation - can use mean, median or mode.
+  we can use one of these averages to replace missing data with a numerical value
+  
+#3. Just leave them alone
+- this can sometimes work if you want a true representation of the data e.g. medical research
+
+
+```{r}
+# run libraries at start
+library(tidyverse)
+library(readxl)
+library(skimr)
+```
+
+```{r}
+#load in the data
+#churn - how often customers leave
+comms_data <- read_csv("data/telecom_data.csv")
+head(comms_data)
+
+#NA greyed out = seen as character, string !?
+```
+
+```{r}
+#select the monthly_charges column to look at what different missing values we have
+
+comms_data %>% 
+  filter(is.na(monthly_charges)) # good way to see missing data
+```
+
+```{r}
+#counting missing values
+
+comms_data %>% 
+  summarise(count = sum(is.na(monthly_charges)))
+```
+1. Remove them
+
+```{r}
+comms_data %>% 
+  #drop_na(monthly_charges) # only dropping in monthly charges
+  drop_na() # drops all na empty values
+```
+
+2.Impute them
+i.e. replace with something else (mean, median, mode)
+
+```{r}
+#replace na observations in the monthly_charges column with the median of that column
+#find the median ignoring the missing values
+
+#coalesce = finds missing values and will replace them with what you've instructed i.e. the median beneath
+
+comms_data_imputed_median <- comms_data %>% 
+  mutate(monthly_charges = coalesce(monthly_charges, median(monthly_charges,
+                                                            na.rm = TRUE)))
+#£45.60 is the median here
+```
+
+
+```{r}
+ggplot(comms_data_imputed_median, aes(customerID, monthly_charges)) + geom_point()
+```
+
+
+```{r}
+#replace all "NA" values as NA i.e. not just a string
+total_charges_replaced <- comms_data_imputed_median %>% 
+  mutate(total_charges = na_if(total_charges, "na"), total_charges = na_if(total_charges, "N/A"))
+
+# check if the NAs are being found now
+total_charges_replaced %>% 
+  filter(is.na(total_charges))
+
+```
+
+```{r}
+total_charges_replaced
+```
+```{r}
+
+#filtered out the NAs
+charges_numeric <- comms_data_imputed_median %>% 
+  mutate(total_charges = as.numeric(total_charges))
+
+charges_numeric <- charges_numeric %>% 
+  filter(!is.na(total_charges))
+
+charges_numeric
+```
+
+```{r}
+
+#replace all "NA" values as NA i.e. not just a string
+payment_method_replaced <- charges_numeric %>% 
+  mutate(payment_method = na_if(payment_method, "--")) 
+
+payment_method_replaced
+
+```
+Instead of replacing, dropping or imputting the NAs like we do with numeric variables, how about we set them to a new category?
+
+```{r}
+#replace the missing values to be 'unavailable'
+payments_new_category <- payment_method_replaced %>% 
+  rename("customer_left" = "churn") %>% 
+  mutate(payment_method = coalesce(payment_method, "unavailable"),
+         customer_left = customer_left == "yes")
+
+
+payments_new_category
+
+```
+

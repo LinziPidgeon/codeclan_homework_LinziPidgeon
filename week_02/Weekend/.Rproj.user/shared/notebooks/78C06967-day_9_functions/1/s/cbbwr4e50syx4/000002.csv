@@ -1,0 +1,10 @@
+"0","```r
+paste('aaaaaa', 'bbbb', 'cccccccc', 'dddddddddddd')
+```"
+"1","[1] \"aaaaaa bbbb cccccccc dddddddddddd\"
+"
+"0","```r
+paste('aaaaaa', 'bbbb', 'cccccccc', 'dddddddddddd', spe = '----')
+```"
+"1","[1] \"aaaaaa bbbb cccccccc dddddddddddd ----\"
+"

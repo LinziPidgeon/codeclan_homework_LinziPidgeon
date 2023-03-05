@@ -1,0 +1,13 @@
+"0","```r
+adder_G <- function(input1, input2) {
+  # here goes lots of code
+  output1 <- input1 * 10
+  output2 <- input2 * 100
+  
+  return(c(output1, output2))
+}
+
+adder_G(1, 2)
+```"
+"1","[1]  10 200
+"

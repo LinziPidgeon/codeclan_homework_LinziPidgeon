@@ -1,0 +1,12 @@
+"0","```r
+select(all_deaths, name, allegiances)
+select(all_deaths, name, allegiances, gender)
+select(all_deaths, -name) # - removes the name column
+select(all_deaths, -name, -allegiances)
+
+deaths_with_no_names <- select(all_deaths, -name)
+deaths_with_no_names
+
+view(all_deaths)
+
+```"

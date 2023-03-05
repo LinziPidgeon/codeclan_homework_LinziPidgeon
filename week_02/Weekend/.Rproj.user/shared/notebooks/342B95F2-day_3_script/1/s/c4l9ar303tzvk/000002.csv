@@ -1,0 +1,11 @@
+"0","```r
+all_deaths
+
+filter(all_deaths, allegiances == 'Lannister')
+filter(all_deaths, allegiances != 'Lannister') # not equal to Lannister
+filter(all_deaths, year-of-death >= 300)
+filter(all_deaths, gender == 0)
+
+filter(all_deaths, allegiances == 'None')
+
+```"

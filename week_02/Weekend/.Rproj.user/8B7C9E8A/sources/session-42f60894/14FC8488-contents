@@ -1,0 +1,57 @@
+---
+title: "`DBeaver` Setup"
+output:
+  pdf_document:
+    toc: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.align = 'center')
+```
+
+\pagebreak
+
+# Download `DBeaver` community edition
+
+The course makes use of the free and open source `DBeaver` database tool. Download the latest version of the `DBeaver` **community edition** at **[this link](https://dbeaver.io/download/)** for your operating system.
+
+# Creating and testing a new connection in `DBeaver`
+
+Open the `DBeaver` application on your computer. Depending on your prior use of `DBeaver` before the start of the course, you may see a view something like this, or it may take you straight to the `Connect to database` page shown in the section below.
+
+It may also ask if you would like to create a sample database, just click `No`.
+
+```{r, echo=FALSE, fig.cap="DBeaver start screen.", out.width = '100%'}
+knitr::include_graphics("images/dbeaver_start.png")
+```
+
+If you don't see the `Connect to database` window, click on the `New Database Connection` icon (**plug symbol with a + sign**).
+
+# Create and test connection to database
+
+You should see the `Connect to database` window shown below.
+
+```{r, echo=FALSE, fig.cap="Creating a connection.", out.width = '100%'}
+knitr::include_graphics("images/create_connection.png")
+```
+
+Click on the `PostgreSQL` elephant icon, as we are going to connect to a remote `PostgreSQL` database. 
+
+## Enter database connection settings
+
+Enter the database settings shown below into the matching spaces in the form:
+
+| Connection setting | Value |
+|---|---|
+| Username | zoo_user |
+| Password | nr5jhkjucb1b6yp2 |
+| Host | db-postgresql-lon1-20135-do-user-7581050-0.b.db.ondigitalocean.com |
+| Port | 25061 |
+| Database | zoo_pool |
+
+```{r, echo=FALSE, fig.cap="Entering connection settings.", out.width = '80%'}
+knitr::include_graphics("images/connection_details.png")
+```
+
+Click on `Test Connection`. At this point `DBeaver` may ask you to download drivers, just click `Download`, and then, if necessary, click on `Test Connection` again. If you have any problems downloading the drivers, your machine may be setup not to allow downloads to the required location (this is common on managed desktop machines). Contact your IT officer or department for assistance. If the connection is successful, click on `Finish`. If not, check your connection settings are correct and try again.

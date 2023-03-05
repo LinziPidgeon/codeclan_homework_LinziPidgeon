@@ -1,0 +1,6 @@
+"0","```r
+iris %>%
+  pull(Sepal.Width)
+```"
+"1","Error in iris %>% pull(Sepal.Width) : could not find function \"%>%\"
+"

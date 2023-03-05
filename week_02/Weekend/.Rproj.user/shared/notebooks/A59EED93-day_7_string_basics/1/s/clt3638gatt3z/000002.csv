@@ -1,0 +1,23 @@
+"0","```r
+mary_location <- employees %>% 
+  filter(first_name == \"Mary\") %>% 
+  select(location) %>% 
+  pull()
+mary_location
+```"
+"1","[1] \"\"
+"
+"0","```r
+sally_location <- employees %>% 
+  filter(first_name == \"Sally\") %>% 
+  select(location) %>% 
+  pull()
+sally_location
+```"
+"1","[1] \" \"
+"
+"0","```r
+mary_location == sally_location
+```"
+"1","[1] FALSE
+"

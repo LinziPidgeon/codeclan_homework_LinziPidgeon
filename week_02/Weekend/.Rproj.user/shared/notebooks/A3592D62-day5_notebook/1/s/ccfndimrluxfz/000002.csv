@@ -1,0 +1,10 @@
+"0","```r
+class(mtcars)
+```"
+"1","[1] \"data.frame\"
+"
+"0","```r
+class(all_deaths)
+```"
+"1","[1] \"spec_tbl_df\" \"tbl_df\"      \"tbl\"         \"data.frame\" 
+"

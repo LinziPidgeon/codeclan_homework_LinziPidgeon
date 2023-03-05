@@ -1,0 +1,4 @@
+"0","```r
+install.packages('remotes')
+remotes::install_github('codeclan/CodeClanData')
+```"
