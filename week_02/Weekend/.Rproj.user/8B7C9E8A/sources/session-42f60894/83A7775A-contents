@@ -59,7 +59,7 @@ get_meteorite_count() <- function(dataframe, year) {
   
   #in here goes lots of code
   
-  output_message <- paste("In" (input_year), there were (number of meteorites that year) meteorites.
+  output_message <- paste("In" year, there were (number of meteorites that year) meteorites.
   
   return(message)
 }

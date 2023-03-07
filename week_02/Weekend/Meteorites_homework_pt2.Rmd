@@ -55,11 +55,11 @@ meteorite_cleaned %>%
 ```{r}
 #5. Write a function called `get_meteorite_count()` that takes in two arguments: a dataframe and a year, and returns the phrase "In (input_year), there were (number of meteorites that year) meteorites." IF there are 1 or more meteorites that year. If there are no meteorites in the year, return the phrase "As far as we know, there were no meteorites that year".
 
-get_meteorite_count() <- function(input1, input2) {
+get_meteorite_count() <- function(dataframe, year) {
   
   #in here goes lots of code
   
-  output_message <- paste("In" (input_year), there were (number of meteorites that year) meteorites.
+  output_message <- paste("In" year, there were (number of meteorites that year) meteorites.
   
   return(message)
 }

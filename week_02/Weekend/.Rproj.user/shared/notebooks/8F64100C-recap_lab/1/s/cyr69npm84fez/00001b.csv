@@ -1,3 +1,0 @@
-"0","Alpha_3 %>% "
-"0","  filter(Country %in% c(""Cabo Verde"",""United States of America"")) %>%"
-"0","  select()"

@@ -1,0 +1,4 @@
+"0","diet_comp_clean_NA %>% "
+"0","  filter(is.na(code)) %>% # can't use == for NA as it's not a value"
+"0","  group_by(country) %>% "
+"0","summarise(country_na = n())"
