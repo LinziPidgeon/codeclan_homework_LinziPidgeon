@@ -1,5 +1,0 @@
-"0","```r
-employees %>% 
-  mutate(postcode_new = str_split(postcode, pattern = \" \")) %>% 
-  unnest(postcode_new)
-```"

@@ -1,6 +1,0 @@
-"0","diet_comp_clean <- diet %>% "
-"0","  pivot_longer("
-"0","    cols = ""Alcoholic Beverages (FAO (2017))"":""Wheat (FAO (2017))"","
-"0","      names_to = ""kcal_source"","
-"0","  values_to = ""avg_daily_kcals"""
-"0",")"

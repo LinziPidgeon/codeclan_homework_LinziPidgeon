@@ -1,7 +1,0 @@
-"0","```r
-visits_wide <- visits_long %>% 
-  pivot_wider(names_from = \"Field\",
-              values_from = \"visit_count\")
-
-head(visits_wide, 20)
-```"

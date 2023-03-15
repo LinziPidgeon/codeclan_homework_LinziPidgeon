@@ -1,7 +1,0 @@
-"0","```r
-
-   pattern <- \"[a-z0-9]+@\"
-
-student_info %>% 
-  mutate(email_detect = str_detect(emails, pattern))
-```"

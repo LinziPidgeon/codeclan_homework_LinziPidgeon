@@ -1,3 +1,0 @@
-"0","```r
-anti_join(customers, orders, \"customer_ID\")
-```"

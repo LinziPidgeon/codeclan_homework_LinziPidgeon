@@ -1,4 +1,0 @@
-"0","```r
-employees %>% 
-  separate(postcode, c(\"postcode_outer\", \"postcode_inner\"), sep = \" \")
-```"

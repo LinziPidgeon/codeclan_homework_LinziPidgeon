@@ -1,3 +1,0 @@
-"0","```r
-nchar(x, type = \"chars\", allowNA = FALSE, keepNA = NA)
-```"

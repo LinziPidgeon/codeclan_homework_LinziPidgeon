@@ -1,3 +1,0 @@
-"0","```r
-spotify_songs <- read_csv(\"data/spotify_sample.csv\")
-```"

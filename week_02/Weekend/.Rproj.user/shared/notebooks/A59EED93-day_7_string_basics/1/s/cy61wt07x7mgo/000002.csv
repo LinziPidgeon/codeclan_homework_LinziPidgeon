@@ -1,4 +1,0 @@
-"0","```r
-unbroken_string <- c(\"We're going to break this string up\",
-                    \"extra text\")
-```"

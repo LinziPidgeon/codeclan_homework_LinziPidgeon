@@ -1,5 +1,0 @@
-"0","```r
-employees %>% 
-  mutate(postcode_inner = str_sub(postcode, start = -3),
-         postcode_outer = str_trim(str_sub(postcode, start = 1, end = -4)))
-```"

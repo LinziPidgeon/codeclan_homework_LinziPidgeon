@@ -1,8 +1,0 @@
-"0","```r
-
-#LP practice
-pattern <- \"[a-z]+[\\_]+[a-z\\_]+\" 
-
-regex_practice %>% 
-str_extract_all(pattern)
-```"

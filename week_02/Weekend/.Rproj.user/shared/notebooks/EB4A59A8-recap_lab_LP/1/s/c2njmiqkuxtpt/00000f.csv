@@ -1,4 +1,0 @@
-"0","meteorite_gtr_1000g <- meteorite_missings %>% "
-"0","filter(mass_g >= 1000)"
-"0",""
-"0","view(meteorite_gtr_1000g)"

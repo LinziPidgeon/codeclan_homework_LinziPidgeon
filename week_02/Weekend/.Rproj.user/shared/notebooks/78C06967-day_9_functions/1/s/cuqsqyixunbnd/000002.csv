@@ -1,5 +1,0 @@
-"0","```r
-nchar('qwertyuiop', 'chars', allowNA = FALSE, keepNA=NA)
-```"
-"1","[1] 10
-"

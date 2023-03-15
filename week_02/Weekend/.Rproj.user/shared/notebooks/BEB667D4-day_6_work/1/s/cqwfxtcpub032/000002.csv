@@ -1,3 +1,0 @@
-"0","```r
-semi_join(customers, orders, \"customer_ID\")
-```"

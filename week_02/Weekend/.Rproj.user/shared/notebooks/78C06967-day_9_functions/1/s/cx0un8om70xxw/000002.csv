@@ -1,9 +1,0 @@
-"0","```r
-vec <- c('word 1', 'word two', 'and another word')
-
-#forloop
-
-nchar(vec)
-```"
-"1","[1]  6  8 16
-"

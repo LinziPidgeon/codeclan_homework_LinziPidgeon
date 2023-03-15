@@ -1,5 +1,0 @@
-"0","#checking the character types"
-"0",""
-"0","diet_comp_clean %>% "
-"0","  group_by(country) %>% "
-"0","  summarise(count = n())"

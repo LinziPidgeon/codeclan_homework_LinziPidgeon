@@ -1,7 +1,0 @@
-"0","```r
-exam_results <- data.frame(student = c('Anne', 'Bill', 'Bob'),
-       question_1 = c('A', 'A', 'B'),
-       question_2 = c('C', 'A', 'D'),
-       question_3 = c('C', 'B', 'A')
-)
-```"

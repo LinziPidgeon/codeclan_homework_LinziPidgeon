@@ -1,5 +1,0 @@
-"0","```r
-employees %>% 
-  group_by(location) %>% 
-  summarise(count = n())
-```"

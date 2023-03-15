@@ -1,5 +1,0 @@
-"0","```r
-mixed_string <- \"If I use a single quote inside double quote it'll be fine\"
-escaped_string <- 'I won\'t have any problems if I esacpe using a backslash'
-
-```"

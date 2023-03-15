@@ -1,9 +1,0 @@
-"0","```r
-pattern <- \"i{4}\"
-
-
-strings %>% 
-   str_detect(pattern)
-```"
-"1","[1] FALSE FALSE FALSE FALSE  TRUE
-"

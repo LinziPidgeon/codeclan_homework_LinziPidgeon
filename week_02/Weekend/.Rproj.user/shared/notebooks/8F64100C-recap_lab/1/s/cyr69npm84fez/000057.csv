@@ -1,3 +1,0 @@
-"0","Alpha_3 %>% "
-"0","  filter(grepl(""United|Verde"", Country)) %>% "
-"0","head(20)"

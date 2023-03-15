@@ -1,6 +1,0 @@
-"0","```r
-employees %>% 
-  select(first_name, last_name) %>% 
-  mutate(first_name_fixed = str_to_title(first_name),
-         last_name_fixed = str_to_title(last_name))
-```"

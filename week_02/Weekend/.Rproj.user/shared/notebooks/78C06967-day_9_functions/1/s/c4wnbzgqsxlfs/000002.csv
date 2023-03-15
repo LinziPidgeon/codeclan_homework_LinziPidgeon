@@ -1,8 +1,0 @@
-"0","```r
-triangle_number <- function(n) {
-  t <- n * (n + 1) / 2
-  return(t)
-}
-
-triangle_number(5)
-```"

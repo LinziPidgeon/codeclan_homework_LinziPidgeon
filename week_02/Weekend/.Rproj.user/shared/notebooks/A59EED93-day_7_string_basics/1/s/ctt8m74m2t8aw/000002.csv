@@ -1,5 +1,0 @@
-"0","```r
-spotify_songs %>% 
-   select(track_artist) %>% 
-  mutate(track_artist_lowcase = str_to_lower(track_artist))
-```"
